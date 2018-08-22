@@ -38,46 +38,6 @@
 
 <!--SCRIPTS-->
 
-<script>
-var myList = ['apples', 'oranges','bananas'];
-var matrix="";
-function createMatrix(){
-	var x = document.getElementById("columns").value;
-	var y = document.getElementById("rows").value;
-	var send_matrix="";
-	var matrix_headers="<tr>";
-	matrix = []; 
-	var equals=[];
-	for (var i = 0; i < x; i++) {
-		matrix[i] =[];
-		equals[i] =0;
-		send_matrix += "<tr contenteditable="+true+">";
-		for (var j = 0; j < y; j++) {
-			if (i == x-1) {
-				matrix_headers+="<th> X<span class=column_number>"+(j+1)+"</span></th>";
-			}
-			matrix[i][j]=0;
-			send_matrix += "<td id="+'"'+i+""+j+'"'+">"+matrix[i][j]+"</td>";
-		}
-		send_matrix+=  "<td>0</td>"+"</tr>";
-	}
-	matrix_headers+="<th>b</th>";
-	document.getElementById("matrix_table").innerHTML = matrix_headers+send_matrix;
-	document.getElementById("solve_button").innerHTML = "<br><button onclick="+'"solveByGaussJordan()"'+"type="+'"button"'+" class="+'"btn btn-primary center-block"'+"id="+'"solveButton"'+">Solve</button>";
-}
-function solveByGaussJordan(){
-	var x = document.getElementById("columns").value;
-	var y = document.getElementById("rows").value;
-	var matrix2=[];
-	var temp= 0+""+0;
-	for (var i = 0; i < x; i++) {
-		for (var j = 0; j < y; j++) {
-			temp=i+""+j;
-			matrix[i][j] =document.getElementById(temp).innerText;
-		}
-	}
-	document.getElementById("demo").innerHTML ="FUNCTION NOT READY YET";
-}
-</script>
+<script src="js/GaussJordan.js" type="text/javascript"></script>
 </body>
 </html>
