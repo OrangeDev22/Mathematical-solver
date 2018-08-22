@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Metodos matematicos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1,user-scaleable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+	<div class="container">
+		<ul class="nav navbar-nav" id="navbar_list">
+			<li class="dropdown" id="navbar_element">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" id="navbar_text" aria-haspopup="true" aria-expanded="true">Solución de sistemas de ecuaciones<span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">Metodo de Gauss Jordan</a></li>
+				</ul>	
+			</li>
+		</ul>
+	</div>
+</nav>
+<br>
+<div class="Variables">
+	<h3 class="values">Matrix Dimensions: </h3>
+	<input type="text" name="Columns" value="2" id="columns" class="values">
+	<h4 class="values">X</h4>
+	<input type="text" name="Rows" value="3" id="rows" class="values">
+	<button onclick="createMatrix()">Crear matriz</button>
+</div>
+<div id="matrix">
+	<table id="matrix_table">
+	</table>
+	<div id="solve_button"></div>
+</div>
+<p id="demo"></p>
+
+<!--SCRIPTS-->
+
+<script>
+var myList = ['apples', 'oranges','bananas'];
+var matrix="";
+function createMatrix(){
+	var x = document.getElementById("columns").value;
+	var y = document.getElementById("rows").value;
+	var send_matrix="";
+	var matrix_headers="<tr>";
+	matrix = []; 
+	var equals=[];
+	for (var i = 0; i < x; i++) {
+		matrix[i] =[];
+		equals[i] =0;
+		send_matrix += "<tr contenteditable="+true+">";
+		for (var j = 0; j < y; j++) {
+			if (i == x-1) {
+				matrix_headers+="<th> X<span class=column_number>"+(j+1)+"</span></th>";
+			}
+			matrix[i][j]=0;
+			send_matrix += "<td id="+'"'+i+""+j+'"'+">"+matrix[i][j]+"</td>";
+		}
+		send_matrix+=  "<td>0</td>"+"</tr>";
+	}
+	matrix_headers+="<th>b</th>";
+	document.getElementById("matrix_table").innerHTML = matrix_headers+send_matrix;
+	document.getElementById("solve_button").innerHTML = "<br><button onclick="+'"solveByGaussJordan()"'+"type="+'"button"'+" class="+'"btn btn-primary center-block"'+"id="+'"solveButton"'+">Solve</button>";
+}
+function solveByGaussJordan(){
+	var x = document.getElementById("columns").value;
+	var y = document.getElementById("rows").value;
+	var matrix2=[];
+	var temp= 0+""+0;
+	for (var i = 0; i < x; i++) {
+		for (var j = 0; j < y; j++) {
+			temp=i+""+j;
+			matrix[i][j] =document.getElementById(temp).innerText;
+		}
+	}
+	document.getElementById("demo").innerHTML ="FUNCTION NOT READY YET";
+}
+</script>
+</body>
+</html>
