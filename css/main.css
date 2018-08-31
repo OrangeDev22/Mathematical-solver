@@ -89,7 +89,13 @@ td{
 #solve_button{
 
 }
-#demo, p{
+/*#demo{
 	background-color: pink;
 	font-size: 100px;
+}*/
+.message{
+	top: 30px;
+	font-size: 20px;
+	text-align: center;
+	position: relative;
 }

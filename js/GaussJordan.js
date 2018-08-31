@@ -51,7 +51,7 @@ function solveByGaussJordan(){
 		send_matrix+=  "<td id="+temp+">"+values[i]+"</td>"+"</tr>";
 	}
 	matrix_headers+="<th>b</th>";
-	document.getElementById("matrix_table").innerHTML = matrix_headers+send_matrix;
+	document.getElementById("new_matrix_table").innerHTML = matrix_headers+send_matrix;
 	//document.getElementById("demo").innerHTML ="FUNCTION NOT READY YET";
 	//solve(matrix,equals);
 }

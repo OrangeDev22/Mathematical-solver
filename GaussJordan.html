@@ -22,9 +22,24 @@
 		</ul>
 	</div>
 </nav>
-<p class="message">Hello, I'm working alone in this project, I'm trying to get better at Web development so sorry for any amateur mistakes :)	</p>
 <br>
-
+<div class="Variables">
+	<h3 class="values">Matrix Dimensions: </h3>
+	<input type="text" name="Columns" value="3" id="columns" class="values">
+	<h4 class="values">X</h4>
+	<input type="text" name="Rows" value="3" id="rows" class="values">
+	<button onclick="createMatrix()">Crear matriz</button>
+</div>
+<div id="matrix">
+	<table id="matrix_table">
+	</table>
+	<div id="solve_button"></div>
+</div>
+<div id="matrix">
+	<table id="new_matrix_table">
+	</table>
+	<div id="solve_button"></div>
+</div>
 <p id="demo"></p>
 
 <!--SCRIPTS-->
